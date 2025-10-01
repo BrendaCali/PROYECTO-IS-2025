@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= titulo %></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+  
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-4 shadow-md">
+    <div class="container mx-auto">
+      <h1 class="text-2xl font-bold"><%= titulo %></h1>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="container mx-auto px-4 py-8">
+    
+    <!-- Información del Proveedor -->
+    <section class="bg-white rounded-lg shadow-md p-6 mb-6">
+      <div class="flex items-center gap-4">
+        <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
+          <span class="text-2xl">👤</span>
+        </div>
+        <div>
+          <h2 class="text-xl font-semibold text-gray-800">Juan Pérez</h2>
+          <p class="text-gray-600">Plomería y Electricidad</p>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="text-yellow-500">⭐⭐⭐⭐⭐</span>
+            <span class="text-sm text-gray-500">(4.8)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendario -->
+    <section class="bg-white rounded-lg shadow-md p-6 mb-6">
+      <h3 class="text-lg font-semibold text-gray-800 mb-4">Selecciona una fecha</h3>
+      
+      <div id="calendario" class="border rounded-lg p-4">
+        <div class="flex justify-between items-center mb-4">
+          <button id="btnAnterior" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">
+            ← Anterior
+          </button>
+          <span id="mesActual" class="font-semibold text-gray-700">Octubre 2025</span>
+          <button id="btnSiguiente" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">
+            Siguiente →
+          </button>
+        </div>
+
+        <!-- Días de la semana -->
+        <div class="grid grid-cols-7 gap-2 mb-2">
+          <div class="text-center text-sm font-medium text-gray-600">Dom</div>
+          <div class="text-center text-sm font-medium text-gray-600">Lun</div>
+          <div class="text-center text-sm font-medium text-gray-600">Mar</div>
+          <div class="text-center text-sm font-medium text-gray-600">Mié</div>
+          <div class="text-center text-sm font-medium text-gray-600">Jue</div>
+          <div class="text-center text-sm font-medium text-gray-600">Vie</div>
+          <div class="text-center text-sm font-medium text-gray-600">Sáb</div>
+        </div>
+
+        <!-- Días del mes -->
+        <div id="diasCalendario" class="grid grid-cols-7 gap-2">
+          <!-- Los días se generarán dinámicamente con JavaScript -->
+        </div>
+      </div>
+
+      <div class="mt-6 text-center">
+        <button id="btnSiguienteCalendario" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 font-semibold disabled:bg-gray-400 disabled:cursor-not-allowed" disabled>
+          Siguiente
+        </button>
+      </div>
+    </section>
+
+    <!-- Panel de horarios -->
+    <section id="panelHorarios" class="bg-white rounded-lg shadow-md p-6 hidden">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-semibold text-gray-800">Horarios disponibles</h3>
+        <button id="btnAtras" class="text-blue-600 hover:text-blue-800 font-medium">
+          ← Atrás
+        </button>
+      </div>
+
+      <p id="fechaSeleccionada" class="text-gray-600 mb-4"></p>
+
+      <div id="listaHorarios" class="space-y-3">
+        <!-- Los horarios se cargarán dinámicamente -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/js/calendario.js"></script>
+</body>
+</html>

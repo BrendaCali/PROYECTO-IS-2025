@@ -1,0 +1,19 @@
+.dia-calendario {
+  @apply p-3 text-center rounded cursor-pointer transition-colors;
+}
+
+.dia-calendario:hover {
+  @apply bg-blue-50;
+}
+
+.dia-calendario.pasado {
+  @apply text-gray-400 cursor-not-allowed;
+}
+
+.dia-calendario.pasado:hover {
+  @apply bg-transparent;
+}
+
+.dia-calendario.seleccionado {
+  @apply bg-blue-600 text-white font-semibold;
+}
